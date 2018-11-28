@@ -1,8 +1,8 @@
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2012 The Machinecoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_NETBASE_H
-#define BITCOIN_NETBASE_H
+#ifndef MACHINECOIN_NETBASE_H
+#define MACHINECOIN_NETBASE_H
 
 #include <string>
 #include <vector>
