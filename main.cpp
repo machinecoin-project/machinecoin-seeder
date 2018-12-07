@@ -397,14 +397,15 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dnsseed1.machinecoin.io", ""};
+static const string mainnet_seeds[] = {"dnsseed.machinenode.de", ""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
-  /*if (!fTestNet){
-    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 8333), true);
-  }*/
+  if (!fTestNet){
+    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 40333), true);
+    db.Add(CService("188.68.46.199", 40333), true);
+  }
   do {
     for (int i=0; seeds[i] != ""; i++) {
       vector<CNetAddr> ips;

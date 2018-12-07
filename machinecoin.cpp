@@ -86,7 +86,7 @@ class CNode {
   }
  
   void GotVersion() {
-    // printf("\n%s: version %i\n", ToString(you).c_str(), nVersion);
+    //printf("\n%s: version %i\n", ToString(you).c_str(), nVersion);
     if (vAddr) {
       BeginMessage("getaddr");
       EndMessage();
