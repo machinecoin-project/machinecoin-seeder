@@ -6,5 +6,6 @@ WORKDIR /opt/dnsseeder
 COPY . .
 
 RUN make
+RUN chmod +x entrypoint.sh
 
-ENTRYPOINT [ "/opt/dnsseeder/dnsseed", "-h", "$HOSTNAME", "-n", "$NAMESERVER", "-m", "$MAIL", "&", "disown", "&&", "tail", "-f", "--retry", "/opt/dnsseeder/dnsseeder.log" ]
+ENTRYPOINT [ "/opt/dnsseeder/entrypoint.sh" ]
