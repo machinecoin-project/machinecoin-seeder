@@ -7,4 +7,4 @@ COPY . .
 
 RUN make
 
-ENTRYPOINT [ "stdbuf", "-i0", "-o0", "-e0", "/opt/dnsseeder/dnsseed" ]
+ENTRYPOINT [ "/opt/dnsseeder/dnsseed" ]

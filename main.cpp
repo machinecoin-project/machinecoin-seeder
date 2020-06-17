@@ -396,7 +396,10 @@ extern "C" void* ThreadStats(void*) {
       queries += dnsThread[i]->dbQueries;
     }
     printf("%s %i/%i available (%i tried in %is, %i new, %i active), %i banned; %llu DNS requests, %llu db queries", c, stats.nGood, stats.nAvail, stats.nTracked, stats.nAge, stats.nNew, stats.nAvail - stats.nTracked - stats.nNew, stats.nBanned, (unsigned long long)requests, (unsigned long long)queries);
-    Sleep(1000);
+    FILE *ff = fopen("dnsseeder.log", "a");
+    fprintf(ff, "%s %i/%i available (%i tried in %is, %i new, %i active), %i banned; %llu DNS requests, %llu db queries\n", c, stats.nGood, stats.nAvail, stats.nTracked, stats.nAge, stats.nNew, stats.nAvail - stats.nTracked - stats.nNew, stats.nBanned, (unsigned long long)requests, (unsigned long long)queries);
+    fclose(ff);
+    Sleep(60000);
   } while(1);
   return nullptr;
 }
