@@ -7,4 +7,4 @@ COPY . .
 
 RUN make
 
-ENTRYPOINT [ "/opt/dnsseeder/dnsseed" ]
+ENTRYPOINT [ "unbuffer", "/opt/dnsseeder/dnsseed" ]
